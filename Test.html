@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //reverse a string using function...
+
+      function reverseString(str) {
+        let reversed = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          reversed += str[i];
+        }
+        return reversed;
+      }
+      console.log(reverseString("hello"));
+
+      //Write a function to find the maximum number in an array.
+      function findMax(arr) {
+        if (arr.length === 0) {
+          throw new Error("Array is empty");
+        }
+
+        let max = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] > max) {
+            max = arr[i];
+          }
+        }
+        return max;
+      }
+
+      console.log(findMax([3, 1, 4, 1, 5, 9]));
+
+      //Write a function to remove duplicates from an array.
+      function removeDuplicates(arr) {
+        return [...new Set(arr)];
+      }
+
+      console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]));
+
+      //Write a function to find the factorial of a number.
+
+      function factorial(n) {
+        if (n < 0) return "Factorial is not defined for negative numbers";
+
+        let result = 1;
+        for (let i = 2; i <= n; i++) {
+          result *= i;
+        }
+        return result;
+      }
+      console.log(factorial(5));
+
+      //Write a function to find the second largest number in an array.
+
+      function secondLargest(arr) {
+
+        let uniqueArr = [...new Set(arr)];
+        uniqueArr.sort((a, b) => b - a);
+
+        return uniqueArr[1];
+      }
+      
+      console.log(secondLargest([10, 20, 4, 45, 99]));
+    </script>
+  </body>
+</html>
